@@ -1,3 +1,5 @@
-dir('subDir') {
-    checkout scm
+#!/usr/bin/env groovy
+
+node {
+   checkout scm
 }
