@@ -1,1 +1,3 @@
-checkout scm
+dir('subDir') {
+    checkout scm
+}
