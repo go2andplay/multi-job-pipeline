@@ -28,5 +28,11 @@ pipeline {
             }
         }
 
+        stage('Trigger New stage') {
+            steps {
+                print "Trigger new stage "
+            }
+        }
+
     }
 }
