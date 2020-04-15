@@ -7,13 +7,4 @@ pipeline{
 
    agent any
 
-   stages {
-
-      stage('DefaultStage') {
-         steps {
-            print "Running "
-         }
-      }
-
-   }
 }

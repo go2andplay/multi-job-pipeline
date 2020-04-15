@@ -9,9 +9,22 @@ pipeline {
 
     stages {
 
-        stage('Stage-Two') {
+        stage('Checkout Stage2') {
             steps {
-                print "Running "
+                print "Stage2 "
+            }
+        }
+
+
+        stage('Build Stage2') {
+            steps {
+                print "Stage2 "
+            }
+        }
+
+        stage('Dockerize Stage2') {
+            steps {
+                print "Stage2 "
             }
         }
 
