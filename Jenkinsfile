@@ -1,5 +1,19 @@
-#!/usr/bin/env groovy
-
 node {
    checkout scm
+}
+
+
+pipeline{
+
+   agent any
+
+   stages {
+
+      stage('DefaultStage') {
+         steps {
+            print "Running "
+         }
+      }
+
+   }
 }
