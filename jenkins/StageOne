@@ -40,7 +40,7 @@ pipeline {
 
         stage('Trigger Next Stage') {
             steps {
-                build job: "StageTwo/master", propagate: true, wait: true
+                build job: "StageTwo/master", propagate: true, wait: false, parameters: [[$class: 'StringParameterValue', name: 'VERSION', value: '2020.10.10']]
             }
         }
 
