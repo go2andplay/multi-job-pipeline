@@ -11,7 +11,7 @@ pipeline {
 
      //   booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
-        choice(name: 'BRANCH', choices: ['master', 'develop'], defaultValue: "master", description: 'Pick your branch')
+        choice(name: 'BRANCH', choices: ['master', 'develop'], defaultValue: 'master', description: 'Pick your branch')
 
       //  password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
