@@ -25,7 +25,7 @@ pipeline {
 
         stage('Dockerize Stage2') {
             steps {
-                print "Stage2 "
+                sh './gradlew clean build'
             }
         }
 
