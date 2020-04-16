@@ -40,9 +40,7 @@ pipeline {
 
         stage('Trigger Next Stage') {
             steps {
-                build job: 'stage two/master', parameters: [
-                        string(name: 'name', value: "testing")
-                ]
+                build job: "stage two/master", propagate: true, wait: true
             }
         }
 
