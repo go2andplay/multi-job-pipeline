@@ -4,7 +4,17 @@ pipeline {
 
     agent any
 
-    triggers { pollSCM('* * * * *') }
+    parameters {
+        string(name: 'VERSION', defaultValue: '1.0', description: 'Version')
+
+     //   text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+
+     //   booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+
+        choice(name: 'BRANCH', choices: ['master', 'develop'], defaultValue: "master", description: 'Pick your branch')
+
+      //  password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+    }
 
 
     stages {
@@ -27,6 +37,15 @@ pipeline {
                 print "Stage1 "
             }
         }
+
+        stage('Trigger Next Stage') {
+            steps {
+                build job: 'stage two', parameters: [
+                        string(name: 'name', value: "testing")
+                ]
+            }
+        }
+
 
     }
 }
