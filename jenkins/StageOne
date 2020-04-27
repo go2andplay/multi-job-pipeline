@@ -28,7 +28,9 @@ pipeline {
 
         stage('Build Stage1') {
             steps {
-                print "Stage1 "
+                ant.propertyfile(file: 'src/main/resources/config.properties') {
+                    entry(key: 'blockEnabled', value: 'withinPipeline')
+                }
             }
         }
 

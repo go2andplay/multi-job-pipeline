@@ -13,3 +13,16 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.3.11'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+
+
+
+task filterConfig(type:Copy) {
+    from "${project.projectDir}/src/main/resources/"
+    into ("${project.buildDir}/configs")
+
+//    filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: propertiesIn)
+    ant.propertyfile(file: 'src/main/resources/config.properties') {
+        entry(key: 'blockEnabled', value: 'withRunTime')
+    }
+}
